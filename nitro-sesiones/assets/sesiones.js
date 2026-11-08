@@ -7,6 +7,38 @@
         return nodo;
     }
 
+    function iniciarPracticas(raiz) {
+        for (const practica of raiz.querySelectorAll('[data-ns-practica]')) {
+            const preguntas = [...practica.querySelectorAll('[data-ns-respuesta]')];
+            const puntuacion = practica.querySelector('[data-ns-puntuacion]');
+
+            practica.addEventListener('submit', evento => {
+                evento.preventDefault();
+                let aciertos = 0;
+                for (const pregunta of preguntas) {
+                    const correcta = pregunta.querySelector('select').value === pregunta.dataset.nsRespuesta;
+                    const feedback = pregunta.querySelector('[data-ns-feedback]');
+                    feedback.querySelector('strong').textContent = correcta ? 'Correcto.' : 'Revisa esta respuesta.';
+                    feedback.hidden = false;
+                    aciertos += Number(correcta);
+                }
+                puntuacion.textContent = `${aciertos} de ${preguntas.length} respuestas correctas.`;
+            });
+
+            practica.addEventListener('change', evento => {
+                evento.target.closest('[data-ns-respuesta]').querySelector('[data-ns-feedback]').hidden = true;
+                puntuacion.textContent = '';
+            });
+
+            practica.addEventListener('reset', () => {
+                practica.querySelectorAll('[data-ns-feedback]').forEach(feedback => { feedback.hidden = true; });
+                puntuacion.textContent = '';
+            });
+
+            practica.hidden = false;
+        }
+    }
+
     function iniciarFiltros(raiz) {
         const fichas = [...raiz.querySelectorAll('[data-ns-ficha]')];
         const ejemplos = [...raiz.querySelectorAll('[data-ns-arquitectura]')];
@@ -265,6 +297,7 @@
     }
 
     document.querySelectorAll('.nitro-sesiones').forEach(raiz => {
+        iniciarPracticas(raiz);
         iniciarFiltros(raiz);
         iniciarConfigurador(raiz, JSON.parse(raiz.querySelector('[data-ns-datos]').textContent));
     });

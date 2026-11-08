@@ -11,6 +11,8 @@ Plugin de WordPress en castellano para diseñar sesiones de deportes de equipo, 
 
 ## Uso
 
+- Empieza por **La sesión**, una adaptación de *Tema 5. La sesión* con las cinco fases, un ejemplo de 90 minutos y dos prácticas con retroalimentación.
+
 - Abre una familia para consultar su propósito, ejemplo e indicador. En la matriz, selecciona una pareja o filtra sus fichas por familia, tipo o evidencia.
 - Filtra los ejemplos por contexto. Cada arquitectura combina dos objetivos y contiene un plan de 90 minutos, material, indicador y secuencia.
 - Carga un ejemplo en el configurador. Cambia la combinación, el objetivo y el orden de las tareas. La duración prevista debe coincidir con la suma de las tareas.

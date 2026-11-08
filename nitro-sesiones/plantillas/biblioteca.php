@@ -5,11 +5,13 @@
         <h2 id="<?php echo esc_attr( $id . '-titulo' ); ?>">Diseña tu próxima sesión</h2>
         <p>Elige qué entrenar, combina objetivos y ordena tus tareas con ejemplos de balonmano y referencias científicas.</p>
         <nav aria-label="Secciones del recurso">
-            <?php foreach ( array( 'familias' => 'Objetivos', 'matriz' => 'Matriz', 'arquitecturas' => 'Sesiones de 90 min', 'configurador' => 'Configurador', 'fuentes' => 'Bibliografía' ) as $ancla => $nombre ) : ?>
+            <?php foreach ( array( 'introduccion' => 'La sesión', 'familias' => 'Objetivos', 'matriz' => 'Matriz', 'arquitecturas' => 'Sesiones de 90 min', 'configurador' => 'Configurador', 'fuentes' => 'Bibliografía' ) as $ancla => $nombre ) : ?>
                 <a href="#<?php echo esc_attr( $id . '-' . $ancla ); ?>"><?php echo esc_html( $nombre ); ?></a>
             <?php endforeach; ?>
         </nav>
     </header>
+
+    <?php require __DIR__ . '/introduccion.php'; ?>
 
     <section class="ns-seccion" id="<?php echo esc_attr( $id . '-familias' ); ?>">
         <p class="ns-ceja">01 · Clasificación</p>

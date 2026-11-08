@@ -125,3 +125,8 @@
     .ns-documento :is(h1, h2) { break-after: avoid; }
     .ns-documento li { break-inside: avoid; margin-bottom: .35rem; white-space: pre-wrap; }
 }
+
+.nitro-sesiones .ns-practica { margin-block: .65rem; }
+.nitro-sesiones .ns-pregunta { margin-block-end: .8rem; }
+.nitro-sesiones .ns-pregunta [data-ns-feedback] { margin: .35rem 0 0; }
+.nitro-sesiones [data-ns-puntuacion] { margin-top: .5rem; font-weight: 700; }

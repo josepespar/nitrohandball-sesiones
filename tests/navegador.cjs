@@ -31,10 +31,26 @@ async function ejecutar() {
         await servir(pagina);
 
         const [primera, segunda] = await pagina.locator('.nitro-sesiones').all();
-        const forma = primera.locator('form');
+        const forma = primera.locator('[data-ns-form]');
         assert.equal(await primera.locator('[data-ns-ficha]:visible').count(), 66);
         assert.equal(await primera.locator('[data-ns-arquitectura]:visible').count(), 12);
         assert.equal(await pagina.evaluate(() => document.documentElement.scrollWidth), 375);
+        const ejercicio = primera.locator('.ns-practica').first();
+        await ejercicio.getByText('Ordena las fases', { exact: true }).click();
+        const respuestas = await ejercicio.getByRole('combobox').all();
+        const orden = ['2', '4', '0', '3', '1'];
+        for (const [indice, respuesta] of respuestas.entries()) {
+            await respuesta.selectOption(orden[indice]);
+        }
+        await ejercicio.getByRole('button', { name: 'Comprobar respuestas' }).click();
+        assert.equal(await ejercicio.getByRole('status').textContent(), '5 de 5 respuestas correctas.');
+        await respuestas[0].selectOption('0');
+        await ejercicio.getByRole('button', { name: 'Comprobar respuestas' }).click();
+        assert.equal(await ejercicio.getByRole('status').textContent(), '4 de 5 respuestas correctas.');
+        assert.match(await ejercicio.locator('[data-ns-feedback]').first().textContent(), /Revisa esta respuesta/);
+        await ejercicio.getByRole('button', { name: 'Volver a empezar' }).click();
+        assert.equal(await respuestas[0].inputValue(), '');
+        assert.equal(await ejercicio.locator('[data-ns-feedback]:visible').count(), 0);
         await primera.getByRole('combobox', { name: /^Familia/ }).selectOption('fisica');
         assert.equal(await primera.locator('[data-ns-ficha]:visible').count(), 11);
         await primera.getByRole('combobox', { name: /^Evidencia/ }).selectOption('directa');
@@ -98,8 +114,12 @@ async function ejecutar() {
         assert.equal(await biblioteca.locator('[data-ns-ficha]:visible').count(), 66);
         await biblioteca.locator('[data-ns-ficha] summary').first().click();
         assert.ok(await biblioteca.locator('[data-ns-ficha] a:visible').count() > 0);
-        assert.equal(await biblioteca.locator('form').isVisible(), false);
-        console.log('Matriz, teclado, filtros, editor, impresión y lectura sin JavaScript correctos.');
+        assert.equal(await biblioteca.locator('[data-ns-form]').isVisible(), false);
+        const practicaEstatica = biblioteca.locator('.ns-practica').first();
+        await practicaEstatica.getByText('Ordena las fases', { exact: true }).click();
+        await practicaEstatica.getByText('Consultar soluciones', { exact: true }).click();
+        assert.ok(await practicaEstatica.getByRole('listitem').filter({ hasText: 'Presenta el objetivo y qué observará el equipo.' }).isVisible());
+        console.log('Prácticas, matriz, teclado, filtros, editor, impresión y lectura sin JavaScript correctos.');
     } finally {
         await navegador.close();
     }
