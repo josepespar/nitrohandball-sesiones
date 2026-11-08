@@ -1,0 +1,127 @@
+.nitro-sesiones {
+    --ns-azul: #0a64a6;
+    --ns-cian: #00a2e8;
+    --ns-tinta: #142c3c;
+    --ns-borde: #c7dce8;
+    --ns-fondo: #f3f9fc;
+    color: var(--ns-tinta);
+    background: #fff;
+    font: 400 1rem/1.6 system-ui, sans-serif;
+    overflow-wrap: anywhere;
+}
+.nitro-sesiones *, .nitro-sesiones *::before, .nitro-sesiones *::after { box-sizing: border-box; }
+.nitro-sesiones [hidden] { display: none !important; }
+.nitro-sesiones :is(h2, h3, h4) { color: inherit; font-family: inherit; line-height: 1.15; margin: 0 0 .75rem; }
+.nitro-sesiones h2 { font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: -.04em; }
+.nitro-sesiones h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: -.025em; }
+.nitro-sesiones h4 { font-size: 1.15rem; margin-top: 1.6rem; }
+.nitro-sesiones p { margin: 0 0 .8rem; }
+.nitro-sesiones a { color: var(--ns-azul); text-decoration: underline; text-underline-offset: .16em; }
+.nitro-sesiones :focus-visible { outline: 3px solid #923c00; outline-offset: 3px; }
+.nitro-sesiones .ns-cabecera :focus-visible { outline-color: #fff; }
+.nitro-sesiones .ns-cabecera {
+    color: #fff;
+    background: linear-gradient(125deg, #0b2e4c, #0a5b91);
+    border-bottom: 5px solid var(--ns-cian);
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 5vw, 3rem);
+}
+.nitro-sesiones .ns-cabecera p { max-width: 59ch; }
+.nitro-sesiones .ns-marca, .nitro-sesiones .ns-ceja {
+    font-size: .78rem;
+    font-weight: 750;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+}
+.nitro-sesiones .ns-marca { color: #d2efff; }
+.nitro-sesiones .ns-marca span { color: #69e8c7; }
+.nitro-sesiones .ns-cabecera nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.nitro-sesiones .ns-cabecera a {
+    color: #fff;
+    border: 1px solid #93cbe9;
+    border-radius: 2rem;
+    padding: .35rem .8rem;
+    font-size: .9rem;
+}
+.nitro-sesiones .ns-cabecera a:hover { background: #155580; }
+.nitro-sesiones .ns-ceja { color: #006650; }
+.nitro-sesiones .ns-seccion { padding: clamp(1rem, 3vw, 2rem) 0; border-bottom: 1px solid var(--ns-borde); }
+.nitro-sesiones :is(.ns-seccion, .ns-ficha) { scroll-margin-block-start: 4rem; }
+.nitro-sesiones .ns-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: .65rem;
+    align-items: start;
+}
+.nitro-sesiones :is(.ns-tarjeta, .ns-ficha, .ns-metodo) {
+    border: 1px solid var(--ns-borde);
+    border-radius: .65rem;
+    background: var(--ns-fondo);
+    padding: .25rem .8rem;
+}
+.nitro-sesiones .ns-ficha { margin: .35rem 0; background: #fff; }
+.nitro-sesiones details > :not(summary) { margin-block: .45rem .75rem; }
+.nitro-sesiones summary { padding: .4rem .1rem; cursor: pointer; font-weight: 700; }
+.nitro-sesiones summary:hover { color: var(--ns-azul); }
+.nitro-sesiones small { display: inline-block; color: #455e70; font-size: .8rem; font-weight: 500; }
+.nitro-sesiones .ns-desplazable { overflow: auto; margin-block: .8rem; padding-bottom: .35rem; }
+.nitro-sesiones table { border-collapse: collapse; margin: 0; width: 100%; font-size: .8rem; }
+.nitro-sesiones caption { text-align: left; font-weight: 700; margin-bottom: .5rem; }
+.nitro-sesiones :is(td, th) { padding: .3rem; text-align: center; border: 1px solid var(--ns-borde); }
+.nitro-sesiones th { min-width: 5.5rem; background: var(--ns-fondo); }
+.nitro-sesiones tr > th:first-child { position: sticky; left: 0; z-index: 1; text-align: left; }
+.nitro-sesiones .ns-celda { display: inline-grid; place-items: center; min-width: 2rem; min-height: 2rem; font-weight: 800; text-decoration: none; border-radius: .25rem; }
+.nitro-sesiones .ns-leyenda { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; }
+.nitro-sesiones :is(.ns-leyenda li, .ns-etiqueta) { display: inline-block; padding: .1rem .5rem; border-radius: .3rem; font-size: .82rem; font-weight: 700; }
+.nitro-sesiones .ns-sinergia { color: #084f3e; background: #d8f4e9; }
+.nitro-sesiones .ns-interferencia { color: #8a2337; background: #fbe5eb; }
+.nitro-sesiones .ns-condicionada { color: #64450b; background: #fff1cc; }
+.nitro-sesiones .ns-filtros { display: flex; gap: .7rem; flex-wrap: wrap; align-items: end; margin-block: .75rem; }
+.nitro-sesiones .ns-filtros label { flex: 1 1 12rem; min-width: 0; }
+.nitro-sesiones .ns-estado { font-size: .9rem; margin: 0; }
+.nitro-sesiones label { display: block; font-weight: 650; margin: 0; }
+.nitro-sesiones :is(input, textarea, select, button) {
+    font: inherit;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #7894a5;
+    border-radius: .35rem;
+    padding: .45rem .65rem;
+    max-width: 100%;
+    min-height: 2.5rem;
+    letter-spacing: normal;
+    text-transform: none;
+}
+.nitro-sesiones :is(input, textarea, select) { display: block; width: 100%; font-weight: 400; }
+.nitro-sesiones textarea { resize: vertical; }
+.nitro-sesiones button { cursor: pointer; font-weight: 650; line-height: 1.3; }
+.nitro-sesiones button:hover:not(:disabled) { background: #dff2ff; }
+.nitro-sesiones button:disabled { opacity: .5; cursor: default; }
+.nitro-sesiones .ns-accion { background: var(--ns-azul); color: #fff; }
+.nitro-sesiones .ns-accion:hover:not(:disabled) { background: #084b7e; }
+.nitro-sesiones form > label { margin-bottom: .75rem; }
+.nitro-sesiones fieldset { border: 1px solid var(--ns-borde); padding: .7rem; margin: 0 0 .65rem; min-width: 0; border-radius: .5rem; }
+.nitro-sesiones legend { font-weight: 700; padding-inline: .2rem; }
+.nitro-sesiones .ns-tarea {
+    display: grid;
+    grid-template-columns: minmax(4.8rem, 7rem) minmax(0, 1fr);
+    gap: .65rem;
+    background: var(--ns-fondo);
+}
+.nitro-sesiones .ns-acciones-tarea { display: flex; flex-wrap: wrap; gap: .45rem; grid-column: 1 / -1; }
+.nitro-sesiones .ns-bibliografia li { margin-bottom: .5rem; }
+.ns-documento { display: none; }
+
+@media print {
+    body.ns-imprimiendo { color: #000 !important; background: #fff !important; display: block !important; margin: 0 !important; padding: 0 !important; }
+    body.ns-imprimiendo > :not(.ns-documento) { display: none !important; }
+    body.ns-imprimiendo > .ns-documento {
+        display: block !important;
+        color: #000;
+        font: 11pt/1.45 system-ui, sans-serif;
+        overflow-wrap: anywhere;
+        padding: 8mm;
+    }
+    .ns-documento :is(h1, h2) { break-after: avoid; }
+    .ns-documento li { break-inside: avoid; margin-bottom: .35rem; white-space: pre-wrap; }
+}
