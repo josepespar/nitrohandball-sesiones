@@ -1,0 +1,212 @@
+{
+  "motor": [
+    "Ammar et al. (2023)",
+    "Interferencia contextual en la práctica deportiva",
+    "https://doi.org/10.1016/j.edurev.2023.100537",
+    "Revisión y metaanálisis. Sin ventaja global clara de la práctica aleatoria en adquisición, retención o transferencia.",
+    "Aprendizaje motor",
+    "Metaanálisis",
+    "",
+    ""
+  ],
+  "reducidos": [
+    "Fernández-Espínola et al. (2020)",
+    "Juegos reducidos en la enseñanza de deportes de equipo",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7143077/",
+    "Revisión sistemática de recursos técnico-tácticos en jóvenes. Los formatos y resultados son heterogéneos.",
+    "Juegos reducidos",
+    "Revisión sistemática",
+    "",
+    ""
+  ],
+  "juego": [
+    "Buchheit et al. (2009)",
+    "Entrenamiento basado en el juego en balonmano juvenil de élite",
+    "https://pubmed.ncbi.nlm.nih.gov/19199207/",
+    "Intervención comparativa. Tanto el juego específico como los intervalos mejoraron indicadores de rendimiento intermitente en la muestra.",
+    "Juegos reducidos",
+    "Intervención",
+    "",
+    ""
+  ],
+  "espacio": [
+    "Corvino et al. (2014)",
+    "Dimensiones de pista y carga en juegos reducidos de balonmano",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3990882/",
+    "Comparación experimental de dimensiones de pista. El formato modifica el estímulo de carga.",
+    "Juegos reducidos",
+    "Estudio experimental",
+    "",
+    ""
+  ],
+  "prevencion": [
+    "Olsen et al. (2005)",
+    "Prevención de lesiones de rodilla y tobillo en balonmano juvenil",
+    "https://pubmed.ncbi.nlm.nih.gov/15699058/",
+    "Ensayo por clubes con 1.837 jugadores de 15–17 años. Un programa neuromuscular aplicado durante la temporada redujo lesiones agudas de rodilla y tobillo en ese contexto.",
+    "Prevención",
+    "Ensayo por conglomerados",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC549653/",
+    ""
+  ],
+  "fatiga": [
+    "Hadjisavvas et al. (2026)",
+    "Fatiga y rendimiento de lanzamiento en balonmano",
+    "https://pubmed.ncbi.nlm.nih.gov/42200897/",
+    "Revisión sistemática y metaanálisis. Para velocidad, g = −0,31 (IC 95 % −0,65 a 0,03). La precisión mostró heterogeneidad muy alta y estimaciones sensibles a estudios influyentes. Se estudia rendimiento agudo, con protocolos y medidas distintos.",
+    "Carga y fatiga",
+    "Metaanálisis",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13214713/",
+    ""
+  ],
+  "puesta": [
+    "Hermassi et al. (2019)",
+    "Fuerza y puesta a punto en balonmano",
+    "https://pubmed.ncbi.nlm.nih.gov/31276499/",
+    "Ensayo pequeño (20 jugadores). Compara un programa que incorpora una reducción de intensidad de dos semanas con el entrenamiento habitual. No aísla la dosis de la víspera.",
+    "Carga y fatiga",
+    "Intervención",
+    "",
+    ""
+  ],
+  "partido": [
+    "Póvoas et al. (2014)",
+    "Fatiga durante partidos de balonmano masculino de élite",
+    "https://pubmed.ncbi.nlm.nih.gov/24552799/",
+    "Estudio de campo con mediciones en partidos y pruebas de rendimiento. La fatiga del partido condiciona la interpretación de pruebas posteriores.",
+    "Carga y fatiga",
+    "Estudio de campo",
+    "",
+    ""
+  ],
+  "recuperacion": [
+    "Ronglan et al. (2006)",
+    "Fatiga neuromuscular y recuperación en balonmano femenino de élite",
+    "https://pubmed.ncbi.nlm.nih.gov/16895532/",
+    "Estudio de cargas consecutivas y evolución del rendimiento. No compara protocolos de recuperación activa.",
+    "Carga y fatiga",
+    "Estudio de campo",
+    "",
+    ""
+  ],
+  "carga": [
+    "Foster et al. (2001)",
+    "Seguimiento del entrenamiento mediante esfuerzo percibido de sesión",
+    "https://pubmed.ncbi.nlm.nih.gov/11708692/",
+    "Comparación del esfuerzo percibido de sesión con una medida basada en frecuencia cardiaca.",
+    "Carga y fatiga",
+    "Estudio comparativo",
+    "",
+    ""
+  ],
+  "clima": [
+    "Smith et al. (2017)",
+    "Clima motivacional en entrenamiento y competición juvenil",
+    "https://pubmed.ncbi.nlm.nih.gov/27055568/",
+    "Observación de conductas del entrenador en fútbol base. Su aplicación a balonmano es indirecta.",
+    "Psicología y reflexión",
+    "Observacional",
+    "",
+    ""
+  ],
+  "disfrute": [
+    "Madsen et al. (2019)",
+    "Formato, participación y diversión en balonmano sub-13",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6524368/",
+    "Comparación de cinco formatos en balonmano sub-13. Informa sobre participación, actividad, esfuerzo percibido y diversión en esa población.",
+    "Juegos reducidos",
+    "Estudio experimental",
+    "",
+    ""
+  ],
+  "concurrente": [
+    "Schumann et al. (2022)",
+    "Compatibilidad del entrenamiento aeróbico y de fuerza",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+    "Revisión sistemática y metaanálisis. Posible atenuación de la fuerza explosiva, especialmente al combinar dentro de la misma sesión. Sin perjuicio global claro para fuerza máxima e hipertrofia. La transferencia al balonmano es indirecta.",
+    "Preparación física",
+    "Metaanálisis",
+    "",
+    "https://researchonline.jcu.edu.au/71546/1/Schumann2021_Article_CompatibilityOfConcurrentAerob.pdf"
+  ],
+  "hombro": [
+    "Andersson et al. (2017)",
+    "Programa de hombro en balonmano de élite",
+    "https://pubmed.ncbi.nlm.nih.gov/27313171/",
+    "Ensayo por equipos con 660 jugadores. Menor prevalencia de problemas de hombro durante una temporada. La estimación para problemas sustanciales fue imprecisa.",
+    "Prevención",
+    "Ensayo por conglomerados",
+    "",
+    ""
+  ],
+  "vuelta": [
+    "Van Hooren y Peake (2018)",
+    "Efectos de una vuelta a la calma activa",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5999142/",
+    "Revisión narrativa. No respalda beneficios robustos para el rendimiento posterior o la prevención de lesiones. La transición al reposo puede seguir cumpliendo una función organizativa.",
+    "Carga y fatiga",
+    "Revisión narrativa",
+    "",
+    ""
+  ],
+  "metas": [
+    "Locke y Latham (2002)",
+    "Metas y motivación en la tarea",
+    "https://doi.org/10.1037/0003-066X.57.9.705",
+    "Síntesis teórica y empírica sobre metas, dificultad, feedback y estrategias de aprendizaje. Aplicación indirecta a la apertura de una sesión.",
+    "Psicología y reflexión",
+    "Síntesis teórica",
+    "",
+    ""
+  ],
+  "calentamiento": [
+    "Fradkin, Zazryn y Smoliga (2010)",
+    "Calentamiento y rendimiento físico",
+    "https://pubmed.ncbi.nlm.nih.gov/19996770/",
+    "Revisión sistemática y metaanálisis sobre rendimiento inmediato. Los efectos dependen de la tarea y el protocolo.",
+    "Preparación física",
+    "Metaanálisis",
+    "",
+    ""
+  ],
+  "desafio": [
+    "Guadagnoli y Lee (2004)",
+    "Punto de desafío y aprendizaje motor",
+    "https://pubmed.ncbi.nlm.nih.gov/15130871/",
+    "Marco conceptual que relaciona nivel, dificultad funcional e información disponible durante la práctica.",
+    "Aprendizaje motor",
+    "Marco conceptual",
+    "",
+    ""
+  ],
+  "reflexion": [
+    "Tannenbaum y Cerasoli (2013)",
+    "Reflexión estructurada tras la acción",
+    "https://pubmed.ncbi.nlm.nih.gov/23516804/",
+    "Metaanálisis de revisiones individuales y grupales en contextos diversos. Aplicación indirecta al cierre en balonmano.",
+    "Psicología y reflexión",
+    "Metaanálisis",
+    "",
+    ""
+  ],
+  "hombro_revision": [
+    "Yonneau et al. (2025)",
+    "Programas preventivos de hombro en balonmano",
+    "https://bmjopensem.bmj.com/content/11/3/e002416",
+    "Revisión sistemática y metaanálisis. En el análisis principal de tres estudios, el efecto combinado fue impreciso y el intervalo incluyó ausencia de efecto.",
+    "Prevención",
+    "Metaanálisis",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12481263/",
+    "https://bmjopensem.bmj.com/content/11/3/e002416.full.pdf"
+  ],
+  "orden_concurrente": [
+    "Eddens et al. (2018)",
+    "Orden dentro de la sesión de fuerza y resistencia",
+    "https://pubmed.ncbi.nlm.nih.gov/28917030/",
+    "En los programas incluidos, fuerza antes de resistencia favoreció la fuerza dinámica del tren inferior frente al orden inverso. El resultado no se extendió a todos los desenlaces.",
+    "Preparación física",
+    "Metaanálisis",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5752732/",
+    "https://d-nb.info/1144624010/34"
+  ]
+}

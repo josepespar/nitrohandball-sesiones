@@ -1,0 +1,10 @@
+{
+  "progresion":["Progresión de simple a complejo","Facilita focalizar la consigna y ajustar la dificultad.","La tarea inicial puede perder representatividad si se prolonga.","motor"],
+  "juego":["Juego, ajuste y vuelta al juego","Permite diagnosticar una dificultad y volver a probarla con oposición.","El juego inicial puede saturar al grupo si la tarea es demasiado compleja.","reducidos"],
+  "bloques":["Bloques separados por prioridad","Protege el objetivo prioritario y permite dosificar cada estímulo.","Aumenta las transiciones y reduce el tiempo de integración.","fatiga"],
+  "integrada":["Integración en una misma tarea","Entrena varias demandas en un contexto compartido.","El estímulo puede variar mucho por puesto y participación.","juego"],
+  "fresco":["Medición o precisión antes de fatiga","Facilita comparar registros con un estado de partida similar.","Una medida en fresco informa poco sobre la respuesta bajo fatiga.","partido"],
+  "paralela":["Rutas paralelas por exposición","Permite ajustar el estímulo al historial inmediato de cada jugador.","Requiere espacio, supervisión y reglas de asignación claras.","recuperacion"],
+  "ensayo":["Ensayo breve con pausas","Da tiempo para revisar responsabilidades y conservar la calidad de las repeticiones.","Puede quedarse corto si el objetivo requiere tolerar ritmo sostenido.","puesta"],
+  "observacion":["Observar sin detener el juego","Mantiene la continuidad y permite registrar conductas en contexto.","Exige criterios y observadores calibrados para comparar registros.","partido"]
+}

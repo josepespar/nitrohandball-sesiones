@@ -1,0 +1,32 @@
+name: Pruebas y ZIP
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - run: find nitro-sesiones tests -name '*.php' -exec php -l '{}' \;
+      - run: php tests/biblioteca.php
+      - run: node --check nitro-sesiones/assets/sesiones.js
+      - name: Probar interacción en Chromium
+        if: matrix.php == '8.4'
+        run: |
+          npm install --prefix "$RUNNER_TEMP/nitro-tests" playwright-core@1.65.0
+          "$RUNNER_TEMP/nitro-tests/node_modules/.bin/playwright-core" install --with-deps chromium
+          NODE_PATH="$RUNNER_TEMP/nitro-tests/node_modules" node tests/navegador.cjs
+      - run: bash scripts/empaquetar.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nitro-sesiones-php-${{ matrix.php }}
+          path: dist/nitro-sesiones.zip

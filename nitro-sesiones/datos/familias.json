@@ -1,0 +1,14 @@
+{
+  "aprendizaje":["Aprendizaje","Incorporar una habilidad o regla de acción nueva.","Recepción orientada con apoyo progresivo.","Retención de la habilidad al inicio de la sesión siguiente."],
+  "perfeccionamiento":["Perfeccionamiento","Estabilizar y ajustar una habilidad ya disponible.","Lanzamiento en apoyo con dos trayectorias de entrada.","Ejecuciones que cumplen el criterio técnico por intento."],
+  "individual":["Táctica individual","Elegir una acción según señales del adversario y el espacio.","Atacar el pie adelantado o fijar y pasar en 2 contra 2.","Decisiones adecuadas por oportunidad observada."],
+  "colectiva":["Táctica colectiva","Coordinar roles y tiempos entre compañeros.","Cruce de primera línea y continuidad con pivote.","Posesiones con coordinación en el momento acordado."],
+  "fisica":["Preparación física","Desarrollar capacidades que sostienen el rendimiento.","Aceleraciones cortas con recuperación suficiente.","Series útiles y caída de rendimiento respecto al inicio."],
+  "precompetitiva":["Preparación competitiva","Ensayar el plan y ajustar la carga antes de un encuentro.","Reposiciones y últimos ataques con tiempo limitado.","Escenarios resueltos con el protocolo acordado."],
+  "competicion":["Competición","Rendir bajo marcador, tiempo y oposición competitiva.","Partido condicionado con arbitraje y rotaciones.","Eficacia por posesión junto con el contexto del marcador."],
+  "recuperacion":["Recuperación","Facilitar la gestión de la fatiga residual y preparar el siguiente estímulo.","Movilidad cómoda, revisión de minutos y trabajo de baja exigencia.","Disponibilidad percibida y carga respecto a días equivalentes."],
+  "prevencion":["Prevención","Reducir exposiciones evitables mediante trabajo neuromuscular planificado.","Aterrizajes, frenadas, equilibrio y cambios de dirección controlados.","Adherencia al programa y ejecución de las consignas."],
+  "evaluacion":["Evaluación","Obtener información comparable para ajustar el entrenamiento.","Prueba familiarizada o registro con rúbrica en juego.","Medida, condiciones y denominador de cada registro."],
+  "psicosocial":["Desarrollo psicosocial","Entrenar comunicación, responsabilidad y cooperación.","Rotar el liderazgo y revisar una conducta de apoyo.","Conductas de apoyo por oportunidad, con devolución respetuosa."],
+  "recreacion":["Recreación","Favorecer disfrute, participación y continuidad.","Minijuegos con equipos equilibrados y reglas negociadas.","Participación efectiva y disfrute percibido."]
+}
