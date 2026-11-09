@@ -98,6 +98,36 @@
         abrirFicha(window.location.hash);
     }
 
+    function iniciarBibliografia(raiz) {
+        const busqueda = raiz.querySelector('[data-ns-buscar-fuente]');
+        const [tema, diseno] = raiz.querySelectorAll('[data-ns-filtro-fuente]');
+        const cuenta = raiz.querySelector('[data-ns-cuenta-fuentes]');
+        const normalizar = texto => texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const fuentes = [...raiz.querySelectorAll('[data-ns-fuente]')].map(ficha => [ficha, normalizar(ficha.textContent)]);
+
+        function filtrar() {
+            const palabras = normalizar(busqueda.value.trim()).split(/\s+/);
+            let visibles = 0;
+            for (const [ficha, texto] of fuentes) {
+                ficha.hidden = Boolean((tema.value && ficha.dataset.tema !== tema.value)
+                    || (diseno.value && ficha.dataset.diseno !== diseno.value)
+                    || !palabras.every(palabra => texto.includes(palabra)));
+                visibles += Number(!ficha.hidden);
+            }
+            cuenta.textContent = visibles ? `${visibles} de ${fuentes.length} referencias` : 'Sin referencias para estos filtros.';
+        }
+
+        busqueda.addEventListener('input', filtrar);
+        tema.addEventListener('change', filtrar);
+        diseno.addEventListener('change', filtrar);
+        raiz.querySelector('[data-ns-limpiar-fuentes]').addEventListener('click', () => {
+            busqueda.value = tema.value = diseno.value = '';
+            filtrar();
+            busqueda.focus();
+        });
+        filtrar();
+    }
+
     function imprimir(ficha) {
         if (document.body.classList.contains('ns-imprimiendo')) return;
         ficha.className = 'ns-documento';
@@ -299,6 +329,7 @@
     document.querySelectorAll('.nitro-sesiones').forEach(raiz => {
         iniciarPracticas(raiz);
         iniciarFiltros(raiz);
+        iniciarBibliografia(raiz);
         iniciarConfigurador(raiz, JSON.parse(raiz.querySelector('[data-ns-datos]').textContent));
     });
 })();

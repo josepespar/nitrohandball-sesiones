@@ -1,6 +1,6 @@
 .nitro-sesiones {
     --ns-azul: #0a64a6;
-    --ns-cian: #00a2e8;
+    --ns-cian: #58b4a1;
     --ns-tinta: #142c3c;
     --ns-borde: #c7dce8;
     --ns-fondo: #f3f9fc;
@@ -21,7 +21,7 @@
 .nitro-sesiones .ns-cabecera :focus-visible { outline-color: #fff; }
 .nitro-sesiones .ns-cabecera {
     color: #fff;
-    background: linear-gradient(125deg, #0b2e4c, #0a5b91);
+    background: #143247;
     border-bottom: 5px solid var(--ns-cian);
     border-radius: 1rem;
     padding: clamp(1.25rem, 5vw, 3rem);
@@ -109,7 +109,10 @@
     background: var(--ns-fondo);
 }
 .nitro-sesiones .ns-acciones-tarea { display: flex; flex-wrap: wrap; gap: .45rem; grid-column: 1 / -1; }
-.nitro-sesiones .ns-bibliografia li { margin-bottom: .5rem; }
+.nitro-sesiones .ns-bibliografia li { margin-bottom: .9rem; padding-block: .65rem; border-bottom: 1px solid var(--ns-borde); }
+.nitro-sesiones .ns-fase { border-inline-start: 3px solid var(--ns-cian); padding: .3rem 1rem; margin: 1.2rem 0; }
+.nitro-sesiones .ns-fase h5 { color: inherit; font: 700 1.12rem/1.3 system-ui, sans-serif; margin: 0 0 .65rem; }
+.nitro-sesiones .ns-cabecera h2, .nitro-sesiones h3 { font-family: Georgia, serif; }
 .ns-documento { display: none; }
 
 @media print {

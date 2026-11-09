@@ -38,25 +38,28 @@ foreach ( $familias as $i => $a ) {
         comprobar( isset( $datos['relaciones'][ "$a-$b" ] ), "Falta la relación $a-$b." );
     }
 }
-foreach ( $datos['relaciones'] as list( $a, $b, $tipo, $nivel, $citas, $nota ) ) {
+foreach ( $datos['relaciones'] as list( $a, $b, $tipo, $nivel, $citas, $nota, $ventaja, $limite ) ) {
     comprobar( in_array( $tipo, array( 'sinergia', 'interferencia', 'condicionada' ), true ), "Tipo de relación inválido en $a-$b." );
     comprobar( in_array( $nivel, array( 'directa', 'indirecta', 'criterio' ), true ), "Evidencia inválida en $a-$b." );
-    comprobar( trim( $nota ) !== '', "Falta nota en $a-$b." );
+    comprobar( $nota && $ventaja && $limite, "Falta secuencia, ventaja o limitación en $a-$b." );
     foreach ( explode( ',', $citas ) as $cita ) {
         comprobar( isset( $datos['fuentes'][ $cita ] ), "Falta la fuente $cita." );
     }
 }
-foreach ( $datos['fuentes'] as list( $autor, $titulo, $url, $resumen ) ) {
+foreach ( $datos['fuentes'] as list( $autor, $titulo, $url, $resumen, $tema, $diseno, $texto, $pdf ) ) {
     comprobar( filter_var( $url, FILTER_VALIDATE_URL ) && parse_url( $url, PHP_URL_SCHEME ) === 'https', "Enlace inválido para $autor." );
-    comprobar( $titulo && $resumen, "Ficha bibliográfica incompleta para $autor." );
+    comprobar( $titulo && $resumen && $tema && $diseno, "Ficha bibliográfica incompleta para $autor." );
+    foreach ( array_filter( array( $texto, $pdf ) ) as $enlace ) {
+        comprobar( filter_var( $enlace, FILTER_VALIDATE_URL ) && parse_url( $enlace, PHP_URL_SCHEME ) === 'https', "Recurso inválido para $autor." );
+    }
 }
 foreach ( $datos['secuencias'] as list( $nombre, $ventaja, $riesgo, $cita ) ) {
     comprobar( $nombre && $ventaja && $riesgo && isset( $datos['fuentes'][ $cita ] ), 'Secuencia incompleta.' );
 }
 $prioridades = array();
-foreach ( $datos['arquitecturas'] as list( $nombre, $a, $b, $secuencia, $contexto, $objetivo, $material, $indicador, $tareas ) ) {
+foreach ( $datos['arquitecturas'] as list( $nombre, $a, $b, $secuencia, $contexto, $objetivo, $material, $indicador, $tareas, $ventaja, $limite ) ) {
     comprobar( isset( $datos['relaciones'][ "$a-$b" ] ) || isset( $datos['relaciones'][ "$b-$a" ] ), "Objetivos inválidos en $nombre." );
-    comprobar( isset( $datos['secuencias'][ $secuencia ] ) && $contexto && $objetivo && $material && $indicador, "Ejemplo incompleto en $nombre." );
+    comprobar( isset( $datos['secuencias'][ $secuencia ] ) && $contexto && $objetivo && $material && $indicador && $ventaja && $limite, "Ejemplo incompleto en $nombre." );
     comprobar( array_sum( array_column( $tareas, 0 ) ) === 90, "$nombre no suma 90 minutos." );
     foreach ( $tareas as list( $minutos, $actividad ) ) {
         comprobar( is_int( $minutos ) && $minutos > 0 && $actividad, "Tarea inválida en $nombre." );
@@ -74,6 +77,18 @@ comprobar( $GLOBALS['scripts'][0] === 'nitro-sesiones', 'El shortcode debe carga
 comprobar( substr_count( $primero, 'data-ns-celda ' ) === 66, 'El shortcode debe mostrar 66 enlaces en la matriz.' );
 comprobar( substr_count( $primero, 'data-ns-ficha=' ) === 66, 'El shortcode debe mostrar 66 fichas.' );
 comprobar( substr_count( $primero, 'data-ns-arquitectura=' ) === 12, 'El shortcode debe mostrar 12 ejemplos.' );
+$fases = array(
+    'Fase de información',
+    'Fase inicial o de adaptación (calentamiento)',
+    'Fase principal o de logro de objetivos',
+    'Fase final o de readaptación (vuelta a la calma)',
+    'Fase de reflexión',
+);
+preg_match_all( '/class="ns-fase"><h5>([^<]+)<\/h5>/', $primero, $titulos );
+comprobar( $titulos[1] === $fases, 'Cambió la nomenclatura o el orden de las cinco fases.' );
+comprobar( strpos( $primero, 'ANTES · Planificación, adecuación y diseño' ) < strpos( $primero, 'Las cinco fases de la sesión' ), 'Falta el proceso anterior.' );
+comprobar( strpos( $primero, 'DESPUÉS · Análisis, feedback y nivel de logro de objetivos' ) > strpos( $primero, '<h5>Fase de reflexión</h5>' ), 'Falta el análisis posterior.' );
+comprobar( substr_count( $primero, 'data-ns-fuente data-tema' ) === count( $datos['fuentes'] ), 'Faltan fichas bibliográficas.' );
 preg_match_all( '/\sid="([^"]+)"/', $primero . $segundo, $coincidencias );
 comprobar( count( $coincidencias[1] ) === count( array_unique( $coincidencias[1] ) ), 'Hay ID repetidos entre instancias.' );
 

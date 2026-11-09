@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Nitro Handball · Diseño de sesiones
  * Description: Biblioteca y configurador de sesiones de entrenamiento con matriz de objetivos y referencias científicas.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: Nitro Handball
@@ -14,8 +14,8 @@ defined( 'ABSPATH' ) || exit;
 
 function nitro_sesiones_recursos() {
     // Cargar la hoja en la cabecera también cuando un maquetador renderiza el shortcode tarde.
-    wp_enqueue_style( 'nitro-sesiones', plugins_url( 'assets/sesiones.css', __FILE__ ), array(), '1.1.0' );
-    wp_register_script( 'nitro-sesiones', plugins_url( 'assets/sesiones.js', __FILE__ ), array(), '1.1.0', true );
+    wp_enqueue_style( 'nitro-sesiones', plugins_url( 'assets/sesiones.css', __FILE__ ), array(), '1.2.0' );
+    wp_register_script( 'nitro-sesiones', plugins_url( 'assets/sesiones.js', __FILE__ ), array(), '1.2.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'nitro_sesiones_recursos' );
 
@@ -34,8 +34,8 @@ function nitro_sesiones_datos() {
     $ruta = __DIR__ . '/datos/relaciones.tsv';
     if ( is_readable( $ruta ) ) {
         foreach ( file( $ruta, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES ) as $linea ) {
-            $relacion = explode( '|', $linea, 6 );
-            if ( count( $relacion ) === 6 ) {
+            $relacion = explode( '|', $linea, 8 );
+            if ( count( $relacion ) === 8 ) {
                 $datos['relaciones'][ $relacion[0] . '-' . $relacion[1] ] = $relacion;
             }
         }
